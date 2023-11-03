@@ -1,0 +1,16 @@
+{
+    "name": "Otaku",
+    "plugin": "plugin.video.otaku",
+    "assert": {
+        "search_movie": ["title"],
+        "search_episode": ["showname"]
+    },
+    "search_movie": [
+        "plugin://plugin.video.otaku/search_movie",
+        {"keyboard": "{title}"}
+    ],
+    "search_episode": [
+        "plugin://plugin.video.otaku/search_tv",
+        {"keyboard": "{showname}"}
+    ]
+}

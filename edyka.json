@@ -1,0 +1,28 @@
+{
+    "name": "edyka",
+    "plugin": "plugin.video.edyka",
+    "is_resolvable": "true",
+    "assert": {
+        "play_episode": ["showname", "season", "episode"],
+        "search_movie": ["title", "year"],
+        "search_episode": ["showname", "season"]
+    },
+    "play_episode": [
+        "plugin://plugin.video.edyka/?mode=searchtv",
+        {"keyboard": "{showname}"},
+        {"label": "(?i)^{showname}\\/"},
+        {"label": "(?i)^.* {season}.*"},
+        {"label": "(?i)^.* S.*{season}E.*{episode} - {title} .*"}
+    ],
+    "search_movie": [
+        "plugin://plugin.video.edyka/?mode=searchmovie",
+        {"keyboard": "{title}"},
+        {"label": "(?i)^{title} \\({year}\\).*"}
+    ],
+    "search_episode": [
+        "plugin://plugin.video.edyka/?mode=searchtv",
+        {"keyboard": "{showname}"},
+        {"label": "(?i)^{showname}\\/"},
+        {"label": "(?i)^.* {season}.*"}
+    ]
+}
