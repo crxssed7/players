@@ -1,0 +1,37 @@
+{
+    "name": "fbox",
+    "plugin": "plugin.video.fboxto",
+    "is_resolvable": "true",
+    "assert": {
+        "play_movie":       ["title"],
+        "play_episode":     ["showname", "season", "episode"],
+        "search_movie":     ["title"],
+        "search_episode":   ["showname"]
+    },
+    "play_movie": [
+        "plugin://plugin.video.fboxto/?mode=search",
+        {"keyboard": "{title}"},
+        {"label": "(?i)^{title}"},
+        {"label": "(?i)^{title} - (?:\\[[^\\]]*\\])*Vidplay"}
+    ],
+    "play_episode": [
+        "plugin://plugin.video.fboxto/?mode=search",
+        {"keyboard": "{showname}"},
+        {"label": "(?i)^{showname} (?:\\[[^\\]]*\\])*\\(tv"},
+        {"label": "(?i)^.* {season} {showname} .*"},
+        {"label": "(?i)^.* \\(S.*{season}E.*{episode}\\)"},
+        {"label": "(?i)^.* \\(S.*{season}E.*{episode}\\) - (?:\\[[^\\]]*\\])*Vidplay"}
+    ],
+    "search_movie": [
+        "plugin://plugin.video.fboxto/?mode=search",
+        {"keyboard": "{title}"},
+        {"label": "(?i)^{title}"}
+    ],
+    "search_episode": [
+        "plugin://plugin.video.fmoviesto/?mode=search",
+        {"keyboard": "{showname}"},
+        {"label": "(?i)^{showname} (?:\\[[^\\]]*\\])*\\(tv"},
+        {"label": "(?i)^.* {season} {showname} .*"},
+        {"label": "(?i)^.* \\(S.*{season}E.*{episode}\\)"}
+    ]
+}
