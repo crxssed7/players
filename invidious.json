@@ -1,0 +1,24 @@
+{
+    "name": "invidious",
+    "plugin": "plugin.video.invidious",
+    "is_resolvable": "true",
+    "assert": {
+        "play_episode":     ["showname", "title"],
+        "search_movie":     ["title"],
+        "search_episode":   ["showname", "title"]
+    },
+    "play_episode": [
+        "plugin://plugin.video.invidious/?action=new_search",
+        {"keyboard": "{showname} {title}"},
+        {"label": "(?i)^{title}"}
+    ],
+    "search_movie": [
+        "plugin://plugin.video.invidious/?action=new_search",
+        {"keyboard": "{title}"},
+        {"label": "(?i)^{title}"}
+    ],
+    "search_episode": [
+        "plugin://plugin.video.invidious/?action=new_search",
+        {"keyboard": "{showname} {title}"}
+    ]
+}
