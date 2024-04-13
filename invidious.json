@@ -19,6 +19,6 @@
     ],
     "search_episode": [
         "plugin://plugin.video.invidious/?action=new_search",
-        {"keyboard": "{showname} {title}"}
+        {"keyboard": "{showname} Season {season} Episode {episode} {title}"}
     ]
 }
