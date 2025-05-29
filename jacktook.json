@@ -1,5 +1,5 @@
 {
-    "name": "[B][COLOR snow]Jacktook[/COLOR][/B]",
+    "name": "[B]Jacktook[/B]",
     "plugin": "plugin.video.jacktook",
     "priority": 200,
     "is_resolvable": "true",
